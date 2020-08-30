@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
-  <title>homepage</title>
+  <title>{{job.title}}</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -40,41 +41,26 @@
 
   <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1>Hi ,i am satish </h1>
-        <p class="lead text-muted">I am a person who believes in doing work that we love so I switched from being DBA and finally doing things in development as a developer. </p>
-        <p>
-          <a href="mailto:satishsharma.cse@gmail.com" class="btn btn-primary my-2">Email me!</a>
-        </p>
-      </div>
-    </section>
-
     <div class="album py-5 bg-light">
       <div class="container">
 
-<div class="container  text-center ">
-  <h1>projets</h1>
-
-</div>
-
-        <div class="row">
-
-{%for job in jobs.all %}
-
-          <div class="col-md-4 ">
-            <div class="card mb-4 shadow-sm">
-              <a class="card-text text-center" href="{% url 'detail' job.id  %}">{{job.title}}</a>
-              <img class="card-img-top" src="{{ job.image.url }}" alt="">
-              <div class="card-body">
-                <p class="card-text text-center">{{ job.summary }}</p>
-              </div>
-            </div>
-          </div>
-{% endfor %}
+      <h1 class="text-center">{{job.title}}</h1>
 
 
-        </div>
+
+<a href="{% url 'home' %}">all projects </a>
+<hr>
+{{job.pub_date_clean}}
+<br>
+<img class="img-fluid"src="{{job.image.url}}" alt="">
+<br>
+<p>{{job.body}}</p>
+
+
+
+
+
+
       </div>
     </div>
 
