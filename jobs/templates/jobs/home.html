@@ -1,96 +1,62 @@
-<!doctype html>
-<html lang="en">
+{% extends 'jobs/base.html' %}
+{% block content%}
+<br>
+<br>
+<section class=" text-center">
+  <div class="container">
+    <br>
+    <h1 id="apple">Hi, I’m Satish! </h1><br>
 
-<head>
-  {% load staticfiles %}
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-  <meta name="generator" content="Jekyll v4.1.1">
-  <title>homepage</title>
+    <h3  id="introtag"  class="">i like making web applications and meeting new people.Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.</h3>
+    <br>
+    <h5> <a class=" " id="introtaboutme" href="{% url 'aboutme' %}" target="_blank">Little Bit More About Me</a></h5>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+<br>
 
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-  <!-- Favicons -->
+    <button class="button" id="butcolo" style="vertical-align:middle"><span><a href="mailto:satishsharma.cse@gmail.com" class=" " id="butcolo">EMAIL ME!</a> </span></button>
 
-  <!-- Custom styles for this template -->
-</head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'home' %}">Satish Sharma</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ml-auto">
-          <a class="nav-link " href="https://linkedin.com/in/satish-sharma-26a315110">Linkedin </a>
-          <a class="nav-link" href="https://github.com/unity1s">github</a>
-          <a class="nav-link " href="{% url 'aboutme' %}">aboutme</a>
-          <a class="nav-link" href="{% static 'resume.pdf' %}">resume</a>
-        </div>
-      </div>
-    </nav>
-  </header>
 
-  <main role="main">
+  </div>
+</section>
+<!-- class="album  bg-light" -->
+<br>
+<hr>
+<div >
+  <div class="container">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1>Hi ,i am satish </h1>
-        <p class="lead text-muted">I am a person who believes in doing work that we love so I switched from being DBA and finally doing things in development as a developer. </p>
-        <p>
-          <a href="mailto:satishsharma.cse@gmail.com" class="btn btn-primary my-2">Email me!</a>
-        </p>
-      </div>
-    </section>
+    <div class="container  text-center ">
+      <h1 class=" text-center font-italic" id="apple">projects</h1>
+      <hr>
+      <br>
+    </div>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
+    <div class="row" id="banana" >
 
-<div class="container  text-center ">
-  <h1>projets</h1>
+      {%for job in jobs.all %}
 
-</div>
+      <div class="col-md-4 " >
+        <div class="card mb-4 shadow-sm" id="cardcolors"  >
+          <br>
+          <a class="card-text text-center"  id="detaillink" href="{% url 'detail' job.id  %}"><h5 id="apple">{{job.title}}</h5></a>
+          <hr>
+          <span class="border border-primary">
+            <a class="card-text text-center" href="{% url 'detail' job.id  %}"><img class="card-img-top" src="{{ job.image.url }}" alt=""></a>
+          </span>
+          <div class="card-body">
+            <a href="{{ job.url }}" target="_blank" class="text-center" ><p class="card-text text-center">{{ job.url }}</p></a>
+            <hr>
+          <h5>  <p class="card-text text-center">{{ job.summary }}</p></h5>
 
-        <div class="row">
-
-{%for job in jobs.all %}
-
-          <div class="col-md-4 ">
-            <div class="card mb-4 shadow-sm">
-              <a class="card-text text-center" href="{% url 'detail' job.id  %}">{{job.title}}</a>
-              <img class="card-img-top" src="{{ job.image.url }}" alt="">
-              <div class="card-body">
-                <p class="card-text text-center">{{ job.summary }}</p>
-              </div>
-            </div>
           </div>
-{% endfor %}
-
-
         </div>
       </div>
+      {% endfor %}
+
+
     </div>
-
-  </main>
-
-  <footer class="text-muted">
-    <div class="container text-center">
-      <p><span>&#169;</span> satish sharma {% now 'Y'%}</p>
-    </div>
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
-
-</body>
-
-</html>
+  </div>
+</div>
+<br>
+{% endblock %}

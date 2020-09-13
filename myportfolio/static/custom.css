@@ -1,0 +1,203 @@
+#apple{
+  font-family: 'Cinzel', serif;
+}
+
+#banana{
+  font-family: 'Zilla Slab', serif;
+}
+
+
+
+
+#introtag{
+font-family: 'Cinzel', serif;
+font-style: italic;
+}
+
+#introtaboutme{
+font-family: 'Cinzel', serif;
+font-style: italic;
+color: black;
+}
+
+
+#borderimg {
+    border: 1px solid white;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#toplink
+  {
+    color: white;
+    font-family: 'Cinzel', serif;
+  }
+
+  #content-wrap {
+    padding-bottom: 2rem;
+  }
+
+  #page-container {
+    position: relative;
+    min-height: 90vh;
+  }
+
+
+  #footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: black;
+    text-align: center;
+  }
+
+body{
+  background-color: #08c5ea;
+  background-image: linear-gradient(149deg, #08c5ea 0%, #2af5dd 46%, #ffffff 100%);
+
+
+}
+
+
+
+#cardcolors{
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+#butcolo{
+  background-color:transparent;
+  color: black;
+
+}
+
+
+
+#detaillink{
+  color: black
+}
+
+
+
+
+
+  .button {
+    display: inline-block;
+    border-radius: 6px;
+    background-color: white
+    border: none;
+    color: blue;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    border: dark;
+    font-weight: inherit;
+  }
+
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .button span:after {
+    content: '\1F4E7';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.6s;
+  }
+
+  .button:hover span {
+    padding-right: 30px;
+  }
+
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+
+
+
+  nav a:hover {
+    color: red;
+  }
+
+
+  /* stroke */
+  nav.fill a {
+    position: relative;
+  }
+
+  nav.fill  a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+  }
+
+
+  nav.fill  a {
+    transition: all 2s;
+  }
+
+  nav.fill a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+  }
+  nav.fill a:hover {
+    color: #fff;
+    z-index: 1;
+  }
+  nav.fill a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+  }
+
+
+  /* Keyframes */
+  @-webkit-keyframes fill {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+  }
